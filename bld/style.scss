@@ -1,0 +1,850 @@
+// DEVICE LIST //
+$xs-min: "only screen and (min-width:none)";
+$xs-max: "only screen and (max-width:520px)";
+$xs-sm: "only screen (min-width: none) and (max-width:767px)";
+
+$sm-min: "only screen and (min-width:768px)";
+$sm-max: "only screen and (max-width:991px)";
+$sm-md: "only screen (min-width: 768px) and (max-width:991px)";
+
+$md-min: "only screen and (min-width:992px)";
+$md-max: "only screen and (max-width:1199px)";
+$md-lg: "only screen (min-width: 992px) and (max-width:1199px)";
+
+$lg-min: "only screen and (min-width:1200px)";
+$lg-max: "only screen and (max-width:none)";
+
+* {
+
+	font-family:"Segoe UI", sans-serif, "Segoe MDL2 Assets", Symbols;
+	line-height:1.5rem;
+
+}
+
+a {
+
+	color:white;
+	font-weight:bold;
+	&:hover {
+
+		opacity:0.5;
+
+	}
+
+	&:visited {
+
+		color:white;
+		opacity:0.5;
+
+	}
+
+
+}
+
+#OPENTABSBAR {
+
+	overflow-x:hidden !important;
+
+}
+.openbar {
+
+	opacity:0;
+
+}
+.fourtyeight {
+
+	div {
+
+	//	max-width:48px;
+
+	}
+
+}
+
+	.hover {
+
+		pointer:cursor;
+
+	}
+
+	.win-appbar {
+
+    	z-index:0 !important;
+
+	}
+
+	.win-splitview.win-splitview-pane-opened.win-splitview-placementleft .win-splitview-pane,
+	.win-splitview.win-splitview-pane-opened.win-splitview-placementright .win-splitview-pane {
+	  width: 420px !important;
+	}
+
+	.win-container {
+
+		height:71px;
+		background:#000000;
+    	line-height: 34px;
+		text-indent:1rem;
+
+	}
+
+	.win-listview {
+
+		margin-top:1rem;
+
+	}
+
+	.win-listview > .win-vertical .win-item {
+
+		background:black;
+
+	}
+
+	#mySplitView > div.win-itemsblock {
+
+
+		background:transparent;
+
+	}
+
+	.settingsListViewItemA {
+
+		height:100%;
+	}
+
+	.settingsListViewItemB {
+
+		height:200%;
+	}
+
+/*Heirchy Button */
+#mySplitView > div.win-splitview-panewrapper > div.win-splitview-pane > div > div:nth-child(5),#element__6 {
+
+
+	max-width:48px;
+
+}
+
+/* PIVOT LEFT BUTTON */
+#mySplitView > div.win-splitview-panewrapper > div.win-splitview-pane > div > div.win-pivot.win-disposable.win-element-resize.win-pivot-nosnap.win-pivot-mouse {
+
+height:300px !important;
+max-height:300px !important;
+
+}
+#mySplitView > div.win-splitview-panewrapper > div.win-splitview-pane > div > div.win-pivot.win-disposable.win-element-resize.win-pivot-nosnap.win-pivot-mouse > div.win-pivot-header-area > div.win-pivot-header-items > div > button.win-pivot-navbutton.win-pivot-navbutton-prev {
+left:0px !important;
+width:48px;
+}
+#mySplitView > div.win-splitview-panewrapper > div.win-splitview-pane > div > div.win-pivot.win-disposable.win-element-resize.win-pivot-nosnap.win-pivot-mouse > div.win-pivot-header-area > div.win-pivot-header-items > div {
+
+	> .win-pivot-header{
+
+			position:relative;left:-13px;top:-1px;
+
+	}
+
+}
+
+
+//PIVOT BUTTONS
+ button.win-pivot-navbutton.win-pivot-navbutton-prev, button.win-pivot-navbutton.win-pivot-navbutton-next {
+
+	z-index:1001;
+	opacity:0;
+
+}
+.win-pivot .win-pivot-headers.win-pivot-shownavbuttons .win-pivot-navbutton{
+
+	opacity:0 !important;
+
+}
+//ENDPIVOT BUTTONS
+
+
+
+
+
+
+
+
+#BackgroundListToolbar > div > div.win-commandingsurface-content > div.win-commandingsurface-actionareacontainer > div.win-commandingsurface-actionarea.win-toolbar-actionarea {
+
+	background:transparent;
+
+}
+
+
+
+
+
+.win-pivot button.win-pivot-header {
+	overflow:hidden;
+font-size: 15px !important;
+font-weight: 400 !important;
+line-height: 1.333 !important;
+margin-top: 13px !important;
+margin-bottom: 15px !important;
+z-index:1000;
+}
+.win-pivot .win-pivot-headers {
+
+	overflow:hidden;
+
+}
+#element__19, #element__8 {
+	position:absolute;
+	bottom:48px;
+	width:100%;
+}
+#element__20, #element__9 {
+	position:absolute;
+	bottom:0px;
+	width:100%;
+}
+
+
+
+.win-pivot button.win-pivot-header {
+
+	opacity:0.5;
+
+}
+
+
+
+
+
+
+
+#ReferenceList {
+
+
+	text-align:right;
+
+	> ul > li {
+
+		list-style:none;
+
+	}
+
+}
+
+
+
+
+
+
+
+
+		.win-pivot-header {
+
+			color:rgb(255, 255, 255);
+
+			cursor:default;
+			direction:ltr;
+			display:block;
+			font-family:"Segoe UI", sans-serif, "Segoe MDL2 Assets", Symbols;
+			font-size:34px;
+			font-weight:200;
+			height:39px;
+			line-height:39.984px;
+			margin-bottom:	0px	;
+			margin-top:	0px	;
+
+			font-size:2.5rem !important;
+			margin-bottom: 0px !important;
+		    overflow: visible !important;
+		    margin-top: 0 !important;
+
+		}
+		.win-pivot-headers {
+
+
+			margin-left:0px !important;
+
+		}
+
+
+
+
+#SidebarMainObjectList  div.win-container{
+
+	height:26px;
+	margin:0px auto !important;
+	padding:0px;
+
+}
+
+
+#ProjectListView  div.win-container{
+
+	height:256px;
+
+}
+
+#ProjectListView2  div.win-container{
+
+	height:48px;
+
+}
+
+
+
+
+#AddProject, .ProjectListItem {
+width:auto;
+height:252px;
+border:2px dashed rgba(255,255,255,0.25);
+margin:0px auto;
+background:rgba(255,255,255,0.25);
+
+}
+
+
+.files {
+
+	width: 100%;
+    height: 100%;
+    /* display: none; */
+    position: absolute;
+    left: 0;
+	opacity:0;
+    top: 0;
+
+}
+
+
+
+#HomeNewsList {
+
+
+	> li {
+
+		list-style:none;
+    	text-indent: -15;
+	}
+
+}
+#HomeGettingStarted > li > pre {
+
+	margin-top:0px;
+
+}
+
+#HomeGettingStarted {
+
+	margin-top:0px;
+	padding-top:0px;
+
+	padding-left:0px;
+
+	> li {
+
+		line-height:1.75em;
+
+	}
+
+}
+
+
+#ObjectListToolbar {
+
+
+	//margin-top:-48px;
+
+}
+
+#ObjectListToolbar .win-commandingsurface .win-commandingsurface-actionarea, .win-commandingsurface .win-commandingsurface-actionarea {
+
+	background:rgb(23, 23, 23);
+	//justify-content:center;
+	//align-items:center;
+}
+
+#BackgroundListToolbar .win-commandingsurface .win-commandingsurface-actionarea, .win-commandingsurface .win-commandingsurface-actionarea {
+
+	background:rgb(23, 23, 23);
+	//justify-content:center;
+	//align-items:center;
+}
+
+
+#SidebarMainObjectList > div.win-viewport.win-vertical > div.win-surface.win-listlayout.win-nocssgrid.win-structuralnodes.win-single-itemsblock > div.win-itemscontainer.win-uniformlistlayout {
+
+	height:232323232px;
+
+}
+
+#SidebarMainObjectList > div.win-viewport.win-vertical > div.win-surface.win-listlayout.win-nocssgrid.win-structuralnodes.win-single-itemsblock > div.win-itemscontainer.win-uniformlistlayout > div.win-itemsblock > div.win-container{
+
+	//height:26px !important;
+	float:right;
+	width:85%;
+	background:rgb(23, 23, 23);
+	background:transparent;
+	//margin:0px auto;
+	//padding:0px;
+	&:hover {
+
+		background:rgba(255,255,255,0.25);
+	}
+
+}
+
+
+#SidebarMainObjectList {
+
+	margin-top:-48px;
+	@media #{$sm-min} {
+
+	//	height:0vh
+	}
+
+	@media #{$md-min} {
+
+	//	height:10vh
+	}
+
+	@media #{$lg-min} {
+
+	//	height:30vh
+	}
+}
+
+
+#HomeMain {
+
+	float:left;
+	border:1px solid black;
+
+	@media #{$sm-min} {
+		width:100%;
+	}
+
+	@media #{$md-min} {
+		width:74.425%;
+	}
+
+	@media #{$lg-min} {
+		width:74.425%;
+	}
+}
+
+
+
+
+#HomeRecentProjects {
+
+	position:relative;
+	float:left;
+	width:33.425%;
+
+	//display:none;
+
+	width:95%;
+	    		margin-left: 0.5rem !important;
+
+
+	background:rgba(255,255,255,0.15);
+
+	border:1px solid rgba(25,25,25,0.25);
+	padding:10px;
+
+	margin:1em;
+
+	min-height:930px;
+	max-height:930px;
+	@media #{$sm-min} {
+
+    		margin-left: 1rem !important;
+			width:95%;
+	}
+
+	@media #{$sm-min} {
+
+    		margin-left: 1rem !important;
+			width:46%;
+	}
+
+	@media #{$md-min} {
+		margin-left:2em !important;
+		display:inline;
+		width:45.425%;
+	}
+
+	@media #{$lg-min} {
+		margin-left:2em !important;
+		display:inline;
+		width:23.425%;
+	}
+}
+
+
+
+.code {
+    min-height: 952px;
+    max-height: 952px;
+}
+#HomeRecentProjects {
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#HomeCode {
+
+	min-height:145px;
+	float:left;
+
+
+	@media #{$sm-min} {
+			width:95%;
+	}
+
+	@media #{$sm-min} {
+		width:45.425%;
+	}
+
+	@media #{$md-min} {
+		display:inline;
+		width:45.425%;
+	}
+
+	@media #{$lg-min} {
+		display:inline;
+		width:70.425%;
+	}
+
+}
+
+.win-splitview-contentwrapper {
+
+	overflow-y: scroll !important;
+    padding-bottom: 1rem;
+}
+
+
+#ReferenceList {
+
+	display:none;
+
+	@media #{$sm-min} {
+		display:none;
+	}
+
+	@media #{$md-min} {
+		display:inline;
+	}
+
+	@media #{$lg-min} {
+		display:inline;
+	}
+}
+
+.faded {
+
+	opacity:0.5;
+	font-weight:600;
+	line-height:100%;
+	> h1 {
+
+		line-height:5em;
+	}
+
+}
+textarea {
+		border:1px sold black;
+
+}
+
+.code {
+
+	/* margin-top: 0.5rem; */
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-bottom: 5em;
+    /* border: 1px solid black; */
+    padding: 0.5rem;
+    background: transparent; //rgba(255,255,255,0.15);
+	border:1px sold black;
+    //min-height: 722;
+	color:#DDDDDD;
+    overflow-y: auto;
+	width:100%;
+	height:100%;
+
+    min-height: 801px;
+    max-height: 952px;
+}
+
+
+
+
+
+
+.ProjectListItem {
+
+	div {
+
+		width:80%;
+
+		h2 {
+
+			width:33%;
+			float:left;
+
+
+		}
+
+	}
+
+}
+
+#homeCurrentJson {
+
+	height:100%;
+
+
+
+	> div {
+		border:1px solid black;
+	}
+	> pre {
+
+				 overflow-y:auto;
+		background:transparent !important;
+
+	}
+}
+
+#homeItemRightTile {
+
+
+	   width:100%;
+   height: 383.5px;
+	   > pre {
+
+		   			overflow-y:auto;
+		   background:transparent !important;
+    		margin-right: 1em;
+	   }
+   	//position:relative;
+
+}
+ #homeItemLeftTile {
+
+	 	background:rgba(255,255,255,0.15);
+
+	 	float:right;
+						min-height: 351px;
+						max-height: 351px;
+		> pre {
+
+				min-height: 351px;
+				max-height: 351px;
+			overflow-y:auto;
+			background:transparent !important;
+		}
+	width:49%;
+	display:block;
+	//position:relative;
+
+}
+
+#HomeRightside {
+
+	float:right;
+	margin-right:2em;
+	border:1px solid black;
+
+	width:25%;
+
+	& pre {
+
+		padding:0px;
+		background:transparent !important;
+
+	}
+
+}
+
+.news .image {
+
+width:25px;height:25px;border:1px solid black;
+
+}
+
+
+#HomePivot {
+
+	width:74%;
+	float:left;
+
+}
+
+/// Mixin to customize scrollbars
+/// Beware, this does not work in all browsers
+/// @author Hugo Giraudel
+/// @param {Length} $size - Horizontal scrollbar's height and vertical scrollbar's width
+/// @param {Color} $foreground-color - Scrollbar's color
+/// @param {Color} $background-color [mix($foreground-color, white, 50%)] - Scrollbar's color
+/// @example scss - Scrollbar styling
+///   @include scrollbars(.5em, slategray);
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  ::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@include scrollbars(.5em, slategray);
+
+
+li > pre {
+
+	position:relative;
+	background:rgba(255,255,255,0.54902);
+	padding:1rem;
+
+	overflow:hidden;
+}
+
+.nolinkstyle {
+
+	text-decoration:none;
+    font-weight: 300;
+    font-family: "Segoe UI", sans-serif, "Segoe MDL2 Assets", "Symbols";
+}
+
+.win-pivot-header-selected {
+
+
+}
+#HomeCodeDraw {
+
+
+	    width: 26.425%;
+	    opacity: 1;
+	    float: left;
+
+}
+.win-splitview-pane{
+
+	#HomeCodeDraw {
+
+		width:90%;
+
+	}
+
+}
+
+.win-toolbar-overflowbutton {
+	display:none;
+
+}
+.win-toolbar {
+	min-width: 32px;
+	position: relative;
+	top: -48px !important;
+}
+#PivotA > div.win-pivot-viewport > div > div:nth-child(1) > div > div > div:nth-child(4) {
+
+	height:48px;
+}
+#PivotA {
+
+	position:absolute;
+	left:48px;
+	top:140px;
+	width:95%;
+	height:75%;
+
+	.win-pivot-viewport {
+
+		position:relative;top:-48px;
+		z-index:0;
+	}
+	.win-pivot-header {
+
+		text-transform:uppercase;
+		cursor:pointer;
+
+	}
+	.win-pivot-header-area {
+
+		position:relative;z-index:100;
+
+	}
+
+}
+
+#Home_Pivot {
+
+position:relative;
+top:0px;
+left:0px;
+z-index:2555;
+
+}
+
+.win-pivot .win-pivot-headers {
+
+	height: 58px !important;
+
+}
+
+
+#Main_Status {
+
+	height:24px;
+	height:48px;
+}
+
+
+.toggle {
+
+	text-align:center;
+	width:124px;
+	float:left;
+
+}

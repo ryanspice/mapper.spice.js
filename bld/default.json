@@ -1,0 +1,45 @@
+{
+    "title": "Project Name",
+    "author": {
+        "company": "Company Name",
+        "city": "",
+        "state/province": ""
+    },
+    "references": {},
+    "data": {
+        "size": "2",
+        "backgrounds": "0",
+        "animations": "0",
+		"states":[
+			{
+				"name":"main",
+				"draw":"",
+				"update":"",
+				"init":""
+			},
+			{
+				"name":"loading",
+				"draw":"",
+				"update":"",
+				"init":""
+			},
+			{
+				"name":"intro",
+				"draw":"",
+				"update":"",
+				"init":""
+			},
+			{
+				"name":"game",
+				"draw":"",
+				"update":"",
+				"init":""
+			}
+		],
+		"objects":[],
+		"sprites":[],
+		"tiles":[]
+    },
+	"draw":"var time = new Date().getTime() + 380 * i;y = Math.cos(time/360) * d + Math.sin(time/180)*T;x = Math.sin(time/360) * d + Math.cos(time/180)*T;this.visuals.circle(this.app.width/2 + x,this.app.height/2+y,2.5,this.colour);",
+    "mapdata": []
+}

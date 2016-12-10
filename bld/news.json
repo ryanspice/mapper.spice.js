@@ -1,0 +1,12 @@
+{
+	 "title": "New Project",
+	 "author": {
+	     "company": "New Project Games",
+	     "city": "New York",
+	     "state/province": "NY"
+	 },
+	 "mapdata": [
+	     "212 555-1234",
+	     "646 555-4567"
+	 ]
+}

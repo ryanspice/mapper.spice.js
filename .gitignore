@@ -1,0 +1,17 @@
+examples/animation/images/Thumbs.db
+.settings/
+docs/
+.vscode/
+node_modules/
+logs/
+SpiceJS + Html5 Boilerplate/
+0.6.71.15.08.01/
+Thumbs.db
+snippet
+.DS_Store
+
+src/docs.scss
+
+src/docs.css
+
+Original
