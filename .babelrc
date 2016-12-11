@@ -1,14 +1,15 @@
 {
 
     "presets": [
-		"es2015-native-modules",
+        ["es2015", { "modules": false }],
 		"stage-0",
 		"react"
 	],
-	"plugins": [ "transform-flow-strip-types",  "transform-class-properties","react-hot-loader/babel"]
+	"plugins": [ "transform-flow-strip-types",  "transform-class-properties"]
 
 }
 
 //"transform-flow-strip-types",
 //"typecheck",
 //"syntax-flow",
+//,"react-hot-loader/babel"
