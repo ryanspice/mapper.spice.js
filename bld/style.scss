@@ -833,6 +833,31 @@ z-index:2555;
 
 }
 
+.win-commandingsurface-actionareacontainer {
+
+	width:400px;
+	float:right;
+
+}
+
+
+.spice-commandbox {
+
+
+}
+.win-textbox:focus {
+
+	background-color:rgba(55,55,55,0.25) !important;
+	color:rgb(0, 120, 215);
+
+	&:focus {
+
+		background-color:rgba(55,55,55,0.25) !important;
+		color:rgb(0, 120, 215);
+
+	}
+
+}
 
 #Main_Status {
 

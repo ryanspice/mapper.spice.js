@@ -19,14 +19,14 @@ export default class Main_Status extends ReactWinJS.AppBar {
 			return (
 				<div>
 
+	                <ReactWinJS.AppBar.ContentCommand
+	                    key="content"
+	                    icon="accept"
+	                    label="Accept">
 
-					                    <ReactWinJS.AppBar.ContentCommand
-					                        key="content"
-					                        icon="accept"
-					                        label="Accept">
-					                        <input className="win-textbox win-interactive" type="text" />
-					                    </ReactWinJS.AppBar.ContentCommand>
+	                    <input placeholder="..." className="win-textbox win-interactive spice-commandbox" type="text" />
 
+	                </ReactWinJS.AppBar.ContentCommand>
 
 				</div>
 			);
