@@ -22,7 +22,7 @@ const source = {
     },
 	plugins:[
         new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
+        //new webpack.HotModuleReplacementPlugin(),
 		new webpack.optimize.OccurrenceOrderPlugin(true),
 		new webpack.optimize.CommonsChunkPlugin({
 	      name: 'vendor',
@@ -75,7 +75,7 @@ module.exports = {
     vendor: ['react']
   },
   output: {
-    path: "./bld/",
+    path: "/bld/",
     filename: source.output.js
   },
   module: {
