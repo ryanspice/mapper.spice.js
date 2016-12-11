@@ -61,7 +61,6 @@ if (env===true)
 	      sourceMap: true
 	    })
 	);
-    source.plugins.push(new webpack.optimize.DedupePlugin() );
 
     //webpackPlugins.push(new webpackHtmlPlugin({ filename: source.output.html404, template:'./src/404.html' }));
 }
