@@ -10,11 +10,14 @@ import TopBarA from "./topbarA.js";
 
 import Dialogue_SettingsMessage from "./Dialogue_SettingsMessage.js";
 
+import Main_Status_List from './Main_Status_List';
 import Main_Status from './Main_Status';
 
 import SideBarA from './Main_SideBar';
 
 import utils from "./utils.js";
+
+import project from "./project"
 
 declare var WinJS: Object;
 
@@ -32,9 +35,10 @@ export default class App extends React.Component {
 	state:{
 		iterator:number;
 		project:Object;
+		search:Array<string>;
 	}
 
-	constructor(props){
+	constructor(props:Object){
 
 		super(props);
 
@@ -45,9 +49,19 @@ export default class App extends React.Component {
 		window.App = this;
 		this.state = {
 			iterator:this.props.iterator,
-			project:project
+			project:project,
+			search:[]
 		};
 
+	}
+
+	get search():Array<string> {
+		return this.state.search;
+	}
+
+	set search(value:Array<string>):void {
+		//this.state.search = value;
+		this.setState({search:value});
 	}
 
 	getProject():Object {
@@ -164,6 +178,9 @@ export default class App extends React.Component {
 			}).bind(this));
 
 			setTimeout((evt)=>{
+
+
+
 				return;
 				let a:Element;
 				if (a = document.getElementById('codearea')){
@@ -208,7 +225,7 @@ export default class App extends React.Component {
 
 
 			 }
-		 },0);
+		 },410);
 
 
 		 /**/
@@ -218,10 +235,9 @@ export default class App extends React.Component {
 		this.updateList();
 
 
-
 	}
 
-	updateState(state){
+	updateState(state:any){
 
   	  	this.refs.sba.setState({ split: state, paneOpened: false });
 
@@ -232,7 +248,17 @@ export default class App extends React.Component {
 
 	}
 
-	updateProject(evt){
+	updateSearch(search:Array<string>){
+
+		this.search = search;
+
+		//this.refs.Status_List.refs.index.innerHTML = this.search;
+		//this.refs.Status_List.state.search = "s";
+		console.log(JSON.parse(JSON.stringify(this.search)));
+
+	}
+
+	updateProject(evt:any){
 
 		let _project_ = this.state.project;
 		let _value_ = evt.target.value;
@@ -251,10 +277,10 @@ export default class App extends React.Component {
 			    },
 			    "references": {},
 			    "data": {
-			        "size": "2",
-			        "objects": "5",
+			        "size": "0",
+			        "objects": "0",
 			        "backgrounds": "0",
-			        "sprites": "4",
+			        "sprites": "0",
 			        "animations": "0"
 			    },
 			    "mapdata": []
@@ -296,7 +322,16 @@ export default class App extends React.Component {
 
 			<Dialogue_SettingsMessage />
 
-			<Main_Status id="main_status" />
+			<Main_Status
+				 project = {this.state.project}
+ 				updateProject={((evt)=>{this.updateProject(evt);}).bind(this)}
+				updateSearch={((evt)=>{this.updateSearch(evt);}).bind(this)}
+				 id="main_status"/>
+
+			<Main_Status_List
+				ref = "Status_List"
+				 search = {this.state.search}
+				updateSearch={((evt)=>{this.updateSearch(evt);}).bind(this)} />
 
 
 		</main>);
