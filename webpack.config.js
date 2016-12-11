@@ -110,7 +110,7 @@ module.exports = {
   devServer: {
         contentBase: './bld',
         hot: false,
-        inline: true,
+        inline: false,
         compress: false,
         stats: {
             assets: true,

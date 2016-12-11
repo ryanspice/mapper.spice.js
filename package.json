@@ -31,7 +31,7 @@
     "exports-loader": "^0.6.3",
     "express": "^4.14.0",
     "file-loader": "^0.8.5",
-    "flow-bin": "^0.33.0",
+    "flow-bin": "^0.36.0",
     "fs": "0.0.2",
     "imports-loader": "^0.6.5",
     "json-update": "^3.0.0",

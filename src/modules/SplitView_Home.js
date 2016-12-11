@@ -42,7 +42,11 @@ import Home_Code_Draw from './home/Home_Code_Draw';
 
 			<div id="kk">
 
-				<h1 className="win-h1" style={{display:'none',marginLeft:'0.75em'}}>Home</h1>
+                <div style={{width:'100%',height:'55px',clear:'both',display:'block'}}>
+
+	                <h1 className="win-h1" style={{background:'rgba(25,25,25,0.25)',display:'',float:'left',maxWidth:'100px',marginLeft:'0.75em'}}>Home</h1>
+
+                </div>
 
 				<Home_RecentProjects style={{opacity:0}} project={this.state.project}
 					updateState={((evt)=>{this.props.updateState(evt);}).bind(this)}
