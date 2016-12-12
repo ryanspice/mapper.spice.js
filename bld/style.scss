@@ -851,14 +851,22 @@ z-index:2555;
 
 }
 
-.spice-search-term {
+.spice-search-container{
 
+	width:100%;
+	clear:both;
 
-	&:hover{
+	>.spice-search-term {
+
+		text-decoration:none;
+		font-weight:lighter;
+
+		&:hover{
 
 			cursor:pointer;
-			font-weight:bolder;
-		background:rgba(55,55,55,0.25);
+			background:rgba(55,55,55,0.25);
+
+		}
 
 	}
 
@@ -871,6 +879,7 @@ z-index:2555;
 	float:right;
 	right:0px;
 		bottom:48px;
+		bottom:0px;
 	min-height:10px;
 		z-index:0;
 
@@ -878,6 +887,7 @@ z-index:2555;
 		padding:1rem;
 		background:rgba(25,25,25,0.25);
 
+		padding-bottom:48px;
 }
 
 #Main_Status {

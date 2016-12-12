@@ -36,6 +36,7 @@ export default class App extends React.Component {
 		iterator:number;
 		project:Object;
 		search:Array<string>;
+		searchCommand:string;
 	}
 
 	constructor(props:Object){
@@ -50,7 +51,8 @@ export default class App extends React.Component {
 		this.state = {
 			iterator:this.props.iterator,
 			project:project,
-			search:[]
+			search:[],
+			searchCommand:''
 		};
 
 	}
@@ -62,6 +64,15 @@ export default class App extends React.Component {
 	set search(value:Array<string>):void {
 		//this.state.search = value;
 		this.setState({search:value});
+	}
+
+	get searchCommand():string {
+		return this.state.searchCommand;
+	}
+
+	set searchCommand(value:string):void {
+		//this.state.search = value;
+		this.setState({searchCommand:value});
 	}
 
 	getProject():Object {
@@ -248,9 +259,17 @@ export default class App extends React.Component {
 
 	}
 
-	updateSearch(search:Array<string>){
+	updateSearch(search:Array<string>,searchCommand:string){
 
 		this.search = search;
+
+
+		if (searchCommand==null)
+			this.searchCommand = "";
+			else{
+			this.searchCommand = searchCommand;
+			eval(searchCommand);
+		}
 
 		//this.refs.Status_List.refs.index.innerHTML = this.search;
 		//this.refs.Status_List.state.search = "s";
@@ -325,13 +344,13 @@ export default class App extends React.Component {
 			<Main_Status
 				 project = {this.state.project}
  				updateProject={((evt)=>{this.updateProject(evt);}).bind(this)}
-				updateSearch={((evt)=>{this.updateSearch(evt);}).bind(this)}
+				updateSearch={((evt,cmd)=>{this.updateSearch(evt,cmd);}).bind(this)}
 				 id="main_status"/>
 
 			<Main_Status_List
 				ref = "Status_List"
 				 search = {this.state.search}
-				updateSearch={((evt)=>{this.updateSearch(evt);}).bind(this)} />
+				updateSearch={((evt,cmd)=>{this.updateSearch(evt,cmd);}).bind(this)} />
 
 
 		</main>);

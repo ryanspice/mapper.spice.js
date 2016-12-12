@@ -11,6 +11,8 @@ import Sidebar_Pivot_Objects from "./Sidebar_Pivot_Objects.js";
 import SplitView_Map from "./SplitView_Map.js";
 import SplitView_Web from "./SplitView_Web.js";
 
+import Base from "./splitview/base.js";
+
 import Home_Code_Draw from './home/Home_Code_Draw';
 
 import project from "./project.js";
@@ -151,7 +153,6 @@ tick():void {
 
   handleGoToPreview(){
 
-	  console.log('eh')
   		this.setState({ split: 1012, paneOpened: this.state.paneOpened });
 
 
@@ -166,6 +167,19 @@ tick():void {
 		return;
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
   handleGoToHome(){
 
 		//window.CC = 1;
@@ -282,6 +296,12 @@ tick():void {
 
   		  break;
 
+  		  case 23232:
+
+  		  this.state.SplitViewContentComponent = ( <Base project={this.state.project} /> );
+
+  		  break;
+
   		  case 1012:
 
   		  this.state.SplitViewContentComponent = ( <SplitView_Preview
@@ -341,13 +361,13 @@ tick():void {
 
 	handleScroll(event:Object) {
 
-		/*
-	    let scrollTop = event.srcElement.body;
+			/*
+		    let scrollTop = event.srcElement.body;
 
-		let ref = this.refs['list'];
-		var val = Math.round(event.target.scrollTop/100*15);
-		ref.winControl.ensureVisible = val;
-*/
+			let ref = this.refs['list'];
+			var val = Math.round(event.target.scrollTop/100*15);
+			ref.winControl.ensureVisible = val;
+		*/
 	}
 
 	handleObjectListMore() {
@@ -365,6 +385,7 @@ tick():void {
 		//e.preventDefault();
 
 	}
+
 	handlePaneClosed(e){
 
 				this.setState({ paneOpened: false });
@@ -396,43 +417,43 @@ tick():void {
 
 
 
-	  var content = (this.state.SplitViewContentComponent);
+	var content = (this.state.SplitViewContentComponent);
 
 
+	var currentlyopen = [];
 
 
+	let spacer = (<ReactWinJS.SplitView.Command
+								style={{opacity:0}}
+								className="fourtyeight"
+								label="help"
+								icon="help"
+								key={currentlyopen.length}
+								onInvoked={()=>{
 
-	  		var currentlyopen = [];
-	  		currentlyopen.push((			<ReactWinJS.SplitView.Command
-	  						style={{opacity:0}}
-	  										className="fourtyeight"
-	  						label="help"
-	  						icon="help"
-	  						key={currentlyopen.length}
-	  						onInvoked={()=>{
+								}} />);
 
-	  						}} />));
+	currentlyopen.push(spacer);
 
+	for(var i = 5; i>0;i--)
+		currentlyopen.push((
 
+					<ReactWinJS.Tooltip
+							key={"TT"+currentlyopen.length}
+						contentComponent={<div>Object {i}</div>}>
 
-	  		for(var i = 2; i>0;i--)
-	  		currentlyopen.push((
+		<ReactWinJS.SplitView.Command
+						className={"Object"+i}
+						label={"Object"+i}
+						icon="help"
+						key={currentlyopen.length}
+						onInvoked={()=>{
 
-							<ReactWinJS.Tooltip
-	  							key={"TT"+currentlyopen.length}
-								contentComponent={<div>Object {i}</div>}>
+								  	this.setState({ split: 23232, paneOpened: false });
+						}} />
 
-				<ReactWinJS.SplitView.Command
-	  						className={"Object"+i}
-	  						label={"Object"+i}
-	  						icon="help"
-	  						key={currentlyopen.length}
-	  						onInvoked={()=>{
-
-	  						}} />
-
-										</ReactWinJS.Tooltip>
-						));
+								</ReactWinJS.Tooltip>
+				));
 
 
 
