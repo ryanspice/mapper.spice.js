@@ -31,10 +31,41 @@ export default class Main_Status_List extends React.Component {
 
 	}
 
+	handleSearchCommand(elm:ElementRef){
+
+		let commandFunction;
+ 		let commandElement = elm;
+		console.log(typeof elm == 'object')
+		switch(typeof elm){
+
+			case 'object':
+
+				commandFunction = (nav:Function)=>{
+
+					console.log("COMAND",elm);
+					nav(commandElement,23232);
+
+				};
+
+			break;
+
+			default:
+
+				commandFunction=()=>{};
+
+			break;
+
+		}
+
+		return commandFunction;
+
+	}
+
 	handleClick(evt:Event,elm:ElementRef){
 
-		console.log(elm);
-		this.props.updateSearch([],elm);
+		let command = this.handleSearchCommand(elm);
+
+		this.props.updateSearch([],command);
 
 	}
 

@@ -9,6 +9,7 @@ import ReactWinJS from 'react-winjs';
       state:{
 
           project:Object;
+          details:Object;
 
       }
 
@@ -18,12 +19,15 @@ import ReactWinJS from 'react-winjs';
 		super(props);
 
 		this.state=({
-			project:this.props.project
+			project:this.props.project,
+			details:this.props.details
 		});
 
 	}
 
   	render(){
+
+        console.log(this.state.details);
 
 		return (
 
@@ -31,10 +35,12 @@ import ReactWinJS from 'react-winjs';
 
                 <div style={{width:'100%',height:'55px',clear:'both',display:'block'}}>
 
-	                <h1 className="win-h1" style={{background:'rgba(25,25,25,0.25)',display:'',float:'left',maxWidth:'100px',marginLeft:'0.75em'}}>a</h1>
+	                <h1 className="win-h1" style={{background:'rgba(25,25,25,0.25)',display:'',float:'left',maxWidth:'100px',marginLeft:'0.75em'}}>{this.props.details.type}</h1>
+
+                    <a className="xxx" style={{float:'right', padding:'1.5rem'}} > </a>
 
                 </div>
-                asdasd
+                {this.props.details.name}
 
 			</div>
 

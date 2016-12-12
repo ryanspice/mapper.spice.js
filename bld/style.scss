@@ -919,7 +919,8 @@ z-index:2555;
 		}
 
 	}
-	height:24px !important;
+//	height:24px !important;
+			height:48px !important;
 	-webkit-transition: height 200ms ease;
 	-moz-transition: height 200ms ease;
 	-ms-transition: height 200ms ease;
@@ -938,6 +939,15 @@ z-index:2555;
 
 
 
+}
+
+.xxx::before {
+    content: "\E10A";
+}
+.xxx {
+    font-family: "Symbols";
+    font-size: 28px;
+    color: #DDDDDD;
 }
 
 .toggle {

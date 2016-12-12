@@ -23,7 +23,23 @@ declare var WinJS: Object;
 
 declare var hljs: Object;
 
-
+const _TEMPLATE_ = `{
+	"title": "Project Name",
+	"author": {
+		"company": "Company Name",
+		"city": "",
+		"state/province": ""
+	},
+	"references": {},
+	"data": {
+		"size": "0",
+		"objects": "0",
+		"backgrounds": "0",
+		"sprites": "0",
+		"animations": "0"
+	},
+	"mapdata": []
+}`;
 
 
 
@@ -36,7 +52,7 @@ export default class App extends React.Component {
 		iterator:number;
 		project:Object;
 		search:Array<string>;
-		searchCommand:string;
+		searchCommand:Function;
 	}
 
 	constructor(props:Object){
@@ -52,7 +68,7 @@ export default class App extends React.Component {
 			iterator:this.props.iterator,
 			project:project,
 			search:[],
-			searchCommand:''
+			searchCommand:()=>{}
 		};
 
 	}
@@ -66,11 +82,11 @@ export default class App extends React.Component {
 		this.setState({search:value});
 	}
 
-	get searchCommand():string {
+	get searchCommand():Function {
 		return this.state.searchCommand;
 	}
 
-	set searchCommand(value:string):void {
+	set searchCommand(value:Function):void {
 		//this.state.search = value;
 		this.setState({searchCommand:value});
 	}
@@ -259,16 +275,60 @@ export default class App extends React.Component {
 
 	}
 
-	updateSearch(search:Array<string>,searchCommand:string){
+	updateSearch(search:Array<string>,searchCommand:Function){
 
 		this.search = search;
 
-
 		if (searchCommand==null)
-			this.searchCommand = "";
+			this.searchCommand = ()=>{};
 			else{
 			this.searchCommand = searchCommand;
-			eval(searchCommand);
+			//console.log(searchCommand);
+			//eval(searchCommand);
+			searchCommand((elm,target)=>{
+
+				this.refs.sba.setState({
+					split: 1010 });
+
+				setTimeout(()=>{
+
+					let currentlyOpened = this.refs.sba.state.currentlyOpened;
+
+					let push = true;
+					let cI = 0;
+					let ccI = 0;
+					currentlyOpened.forEach((cElm)=>{
+						console.log(cElm,elm);
+						if (cElm.name==elm.name) {
+							ccI = cI;
+							push = false;
+						}
+							cI++;
+					});
+
+					if (push == true) {
+						currentlyOpened.push(elm);
+
+				  		this.refs.sba.setState({
+							split: target,
+							currentlyOpened: currentlyOpened,
+							currentlyOpen: this.refs.sba.state.currentlyOpen+1 });
+
+					} else {
+
+						this.refs.sba.setState({
+							split: target,
+							currentlyOpen: ccI+1});
+
+
+					}
+
+
+				},100);
+
+
+
+			});
 		}
 
 		//this.refs.Status_List.refs.index.innerHTML = this.search;
@@ -287,23 +347,7 @@ export default class App extends React.Component {
 		replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
 
 			let _temp_ = JSON.parse(_value_);
-			let _temp2_ = JSON.parse(`{
-			    "title": "Project Name",
-			    "author": {
-			        "company": "Company Name",
-			        "city": "",
-			        "state/province": ""
-			    },
-			    "references": {},
-			    "data": {
-			        "size": "0",
-			        "objects": "0",
-			        "backgrounds": "0",
-			        "sprites": "0",
-			        "animations": "0"
-			    },
-			    "mapdata": []
-			}`);
+			let _temp2_ = JSON.parse(_TEMPLATE_);
 
 			_temp2_ = Object.assign(_temp2_,_temp_);
 			//_temp2_.draw = "document.getElementsByClassName('code')[1].value";
@@ -330,30 +374,30 @@ export default class App extends React.Component {
 
 		return (
 
-		<main>
+			<main>
 
-			<TopBarA ref="topbar" />
+				<TopBarA ref="topbar" />
 
-			<SideBarA ref="sba" project = {this.state.project}
-				updateProject={((evt)=>{this.updateProject(evt);}).bind(this)}
-				updateState={((evt)=>{this.updateState(evt);}).bind(this)}
-				/>
+				<SideBarA ref="sba" project = {this.state.project} currentlyOpen = {this.state.currentlyOpened}
+					updateProject={((evt)=>{this.updateProject(evt);}).bind(this)}
+					updateState={((evt)=>{this.updateState(evt);}).bind(this)}
+					/>
 
-			<Dialogue_SettingsMessage />
+				<Dialogue_SettingsMessage />
 
-			<Main_Status
-				 project = {this.state.project}
- 				updateProject={((evt)=>{this.updateProject(evt);}).bind(this)}
-				updateSearch={((evt,cmd)=>{this.updateSearch(evt,cmd);}).bind(this)}
-				 id="main_status"/>
+				<Main_Status
+					project = {this.state.project}
+	 				updateProject={((evt)=>{this.updateProject(evt);}).bind(this)}
+					updateSearch={((evt,cmd)=>{this.updateSearch(evt,cmd);}).bind(this)}
+					 id="main_status"/>
 
-			<Main_Status_List
-				ref = "Status_List"
-				 search = {this.state.search}
-				updateSearch={((evt,cmd)=>{this.updateSearch(evt,cmd);}).bind(this)} />
+				<Main_Status_List
+					ref = "Status_List"
+					search = {this.state.search}
+					updateSearch={((evt,cmd)=>{this.updateSearch(evt,cmd);}).bind(this)} />
 
+			</main>);
 
-		</main>);
 		}
 
 }

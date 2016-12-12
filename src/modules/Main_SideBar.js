@@ -74,6 +74,8 @@ export default class SideBarA extends React.Component {
 		SplitViewContentComponent:Object;
 		project:Object;
 		_OBJECTLIST_:Object;
+		currentlyOpened:Array<Object>;
+		currentlyOpen:number;
 	}
 
 	props:{
@@ -99,6 +101,8 @@ export default class SideBarA extends React.Component {
 		split:1010,
 		initialCount: 0,
 		initalOpened:false,
+		currentlyOpened:[],
+		currentlyOpen:0,
 		SplitViewContentComponent:(<SplitViewStartingScreen />),
 		_OBJECTLIST_:new WinJS.Binding.List([
 	    	{ title:'A' },
@@ -298,7 +302,9 @@ tick():void {
 
   		  case 23232:
 
-  		  this.state.SplitViewContentComponent = ( <Base project={this.state.project} /> );
+		  console.log(this.state.currentlyOpened)
+		  console.log(this.state.currentlyOpened[this.state.currentlyOpen])
+  		  this.state.SplitViewContentComponent = ( <Base project={this.state.project} details={this.state.currentlyOpened[this.state.currentlyOpen-1]} /> );
 
   		  break;
 
@@ -435,25 +441,30 @@ tick():void {
 
 	currentlyopen.push(spacer);
 
-	for(var i = 5; i>0;i--)
+	let iterator = 0;
+	for(let i = 0; i<this.state.currentlyOpened.length;i++){
+
+		iterator++;
 		currentlyopen.push((
 
 					<ReactWinJS.Tooltip
-							key={"TT"+currentlyopen.length}
+							key={"TT"+i}
 						contentComponent={<div>Object {i}</div>}>
 
 		<ReactWinJS.SplitView.Command
 						className={"Object"+i}
 						label={"Object"+i}
 						icon="help"
-						key={currentlyopen.length}
+						key={"a"+i}
 						onInvoked={()=>{
-
-								  	this.setState({ split: 23232, paneOpened: false });
+							console.log(iterator)
+								  	this.setState({ split: 23232,  currentlyOpen:(i+1), currentlyOpened:this.state.currentlyOpened,paneOpened: false });
 						}} />
 
 								</ReactWinJS.Tooltip>
 				));
+
+	}
 
 
 

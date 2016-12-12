@@ -171,7 +171,7 @@ export default class Main_Status extends ReactWinJS.AppBar {
                                 setTimeout((evt)=>{
 
                                     this.setState({selected:0});
-                                    this.props.updateSearch([],'');
+                                    //this.props.updateSearch([],'');
 
                                 },1000)
 

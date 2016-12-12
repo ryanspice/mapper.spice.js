@@ -77,10 +77,12 @@ var listIterator = 0;
 				  </h4>
 				  <br/>
 				  <br/>
-				  <p className = "win-p"> Current Version: 0.1 </p>
-				  <p className = "win-p"> Webpack: 0 </p>
-				  <p className = "win-p"> Node: 0 </p>
-				  <p className = "win-p"> Babel: 0 </p>
+				  <p className = "win-p"> Current Version: 0.2 </p>
+				  <p className = "win-p"> Webpack 2 </p>
+				  <p className = "win-p"> NodeJS </p>
+				  <p className = "win-p"> ReactJS </p>
+				  <p className = "win-p"> WinJS </p>
+				  <p className = "win-p"> Babel 6 </p>
 			  </div>
 			);
 		});
