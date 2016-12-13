@@ -12,6 +12,7 @@ import SplitView_Map from "./SplitView_Map.js";
 import SplitView_Web from "./SplitView_Web.js";
 
 import Base from "./splitview/base.js";
+import Group from "./splitview/group";
 
 import Home_Code_Draw from './home/Home_Code_Draw';
 
@@ -284,27 +285,30 @@ tick():void {
 
   		  case 8:
 
-  		  this.state.SplitViewContentComponent = ( <SplitView_Web header="Google Closure Compiler" src="http://closure-compiler.appspot.com/home" /> );
+	  		this.state.SplitViewContentComponent = ( <SplitView_Web header="Google Closure Compiler" src="http://closure-compiler.appspot.com/home" /> );
 
   		  break;
 
   		  case 9:
 
-  		  this.state.SplitViewContentComponent = ( <SplitViewSettings /> );
+	  		this.state.SplitViewContentComponent = ( <SplitViewSettings /> );
 
   		  break;
 
   		  case 1010:
 
-  		  this.state.SplitViewContentComponent = ( <SplitViewStartingScreen /> );
+		  this.state.SplitViewContentComponent = ( <SplitViewStartingScreen /> );
 
   		  break;
 
   		  case 23232:
 
-		  console.log(this.state.currentlyOpened)
-		  console.log(this.state.currentlyOpened[this.state.currentlyOpen])
-  		  this.state.SplitViewContentComponent = ( <Base project={this.state.project} details={this.state.currentlyOpened[this.state.currentlyOpen-1]} /> );
+		 	let details = this.state.currentlyOpened[this.state.currentlyOpen-1];
+
+			if (details.name)
+  				this.state.SplitViewContentComponent = ( <Group project={this.state.project} details={details} /> );
+				else
+  			this.state.SplitViewContentComponent = ( <Base project={this.state.project} details={details} /> );
 
   		  break;
 

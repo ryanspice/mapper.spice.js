@@ -40,6 +40,7 @@ import ReactWinJS from 'react-winjs';
                     <a className="xxx" style={{float:'right', padding:'1.5rem'}} > </a>
 
                 </div>
+
                 {this.props.details.name}
 
 			</div>
