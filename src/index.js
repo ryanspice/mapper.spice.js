@@ -15,6 +15,9 @@ import LoadingScreen from "./loading.js";
 
 import project from "./modules/project.js";
 
+require('offline-plugin/runtime').install();
+
+
 /*
 	@ Mapper built as a customizable JSON map editor for 2D Games.
 	@ Ryan Spice-Finnie

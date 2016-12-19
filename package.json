@@ -39,6 +39,7 @@
     "json-update": "^3.0.0",
     "jszip": "^2.5.0",
     "jszip-utils": "0.0.2",
+    "offline-plugin": "^4.5.3",
     "react-hot-loader": "^3.0.0-beta.6",
     "style-loader": "^0.13.0",
     "webpack": "^2.2.0-rc.0",

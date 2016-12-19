@@ -5,6 +5,8 @@ const webpack = require('webpack');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
+
 // html = new HtmlWebpackPlugin({ title: 'Webpack App' });
 
 const env = process.argv.indexOf('--env') === -1 ? false : true;
@@ -32,7 +34,8 @@ const source = {
 	    new webpack.LoaderOptionsPlugin({
 	      minimize: true,
 	      debug: false
-	    })
+	  }),
+		new OfflinePlugin()
 	]
 
 }
@@ -75,8 +78,11 @@ module.exports = {
     vendor: ['react']
   },
   output: {
-    path: "/bld/",
-    filename: source.output.js
+    path: path.resolve(__dirname,"bld"),
+    filename: source.output.js,
+	publicPath:"/bld/",
+	library:"test-0",
+	libraryTarget: "umd"
   },
   module: {
       rules:[
@@ -93,7 +99,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                   'babel-loader'
-                ],
+                ]
             },
 
       ]
