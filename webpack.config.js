@@ -78,6 +78,7 @@ module.exports = {
     vendor: ['react']
   },
   output: {
+	  
     path: path.resolve(__dirname,"bld"),
     filename: source.output.js,
 	publicPath:"/bld/",
