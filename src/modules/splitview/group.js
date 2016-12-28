@@ -43,12 +43,17 @@ export default class Group extends Base {
 
 		console.log(data)
 
+		try{
 		if (( data[this.props.details.name][0]))
 			data = {
 				name:this.props.details.name,
 				data:data[this.props.details.name]
 			};
+		}catch(e){
 
+			console.warn(e);
+
+		}
 
 		return (
 

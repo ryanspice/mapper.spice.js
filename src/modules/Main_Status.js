@@ -173,7 +173,7 @@ export default class Main_Status extends ReactWinJS.AppBar {
                                     this.setState({selected:0});
                                     //this.props.updateSearch([],'');
 
-                                },1000)
+                                },2000)
 
                             }).bind(this)}
                         />

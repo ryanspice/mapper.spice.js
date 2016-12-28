@@ -35,8 +35,8 @@ export default class Home_Code extends React.Component {
 	render(){
 
 		return (<div id="HomeCode" style={{opacity:1}} >
-			
-			<h2 hidden id="HomeCodeTitle" className="win-h2" style={{display:'none',opacity:0}}>Getting Started</h2>
+
+			<h2  id="HomeCodeTitle" className="win-h2" style={{marginTop:'1rem',display:'block',opacity:1}}>Recent Project</h2>
 
 			<ol id="HomeGettingStarted">
 
