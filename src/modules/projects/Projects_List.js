@@ -49,13 +49,14 @@ export default class Projects_ListView extends React.Component {
 	render(){
 
 		let listViewItemRenderer = ReactWinJS.reactRenderer((item)=>{
-			return <List_Item obj={item} />;
+			return <List_Item obj={item} f={()=>{this.props.updateState(2); document.getElementById('element__5').click(); }}/>;
 		});
 
 
 		return (<ReactWinJS.ListView
 			id="ProjectListView"
 			style={{width:'100%',maxWidth:'450px',margin:'0px auto', height:'586px'}}
+				updateState={((evt)=>{this.props.updateState(evt);}).bind(this)}
 			itemDataSource={this.state.data.dataSource}
 			itemTemplate={listViewItemRenderer}
 			layout={{ type: WinJS.UI.ListLayout }} />);

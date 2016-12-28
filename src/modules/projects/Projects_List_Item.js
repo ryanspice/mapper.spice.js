@@ -23,7 +23,11 @@ export default class List_Item extends React.Component {
 
 		return (
 
-			<div className="ProjectListItem" >
+			<div className="ProjectListItem"
+				onClick={()=>{ this.props.f();
+					document.getElementsByClassName('win-splitview-pane')[0].style.display = "block";
+					document.getElementById('main_status').style.display = "block"; 
+				}}>
 				<center>
 					<br/>
 					<h2 className="win-h2">

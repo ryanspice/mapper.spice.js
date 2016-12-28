@@ -354,8 +354,15 @@ tick():void {
 	componentDidUpdate (){
 
 		if (this.state.split == 1010) {
-				this.setState({ split: 1, paneOpened: this.state.paneOpened });
-				window.CC = 0;
+
+			this.setState({ split: 1, paneOpened: this.state.paneOpened });
+			setTimeout(()=>{
+
+
+			},1000);
+
+		window.CC = 0;
+
 		}
 
 		return;
@@ -572,96 +579,3 @@ tick():void {
     );
   }
 }
-
-
-/*
-
-			<ReactWinJS.Pivot style={{display:'none',position:'relative',top:"-54px",left:"48px",zIndex:"25555", height: "100px",maxHeight:"100px",display:this.state.paneOpened?"block":"none" }} >
-
-				<ReactWinJS.Pivot.Item key="itemA" header="Object">
-					<Sidebar_Pivot_Objects
-						itemDataSource={currentData}
-						itemTemplate={currentLayout}
-						layout={_LISTLAYOUT_}
-						style={{ maxHeight:ObjectListHeight }}
-					/>
-				</ReactWinJS.Pivot.Item>
-
-
-
-
-
-				<ReactWinJS.Pivot.Item key="itemB" header="Sprite">
-
-					<div>
-						<ReactWinJS.ToolBar
-							style={{display:this.state.paneOpened?"block":"none" }}
-							onBeforeClose={this.state.paneOpened?this.handleOpenPane:null}
-							id="BackgroundListToolbar"
-						>
-
-							<ReactWinJS.ToolBar.Button key="import" label="This is a ToolBar command" icon="import"
-								onInvoked={this.handleObjectListMore2}
-							/>
-							<ReactWinJS.ToolBar.Button key="add" label="This is a ToolBar command" icon="add"
-								onInvoked={this.handleObjectListMore2}
-							/>
-
-						</ReactWinJS.ToolBar>
-
-
-						<ReactWinJS.SplitView.Command
-
-							id="SidebarMainBackgroundListTitle"
-							style={{position:'relative',left:'48px', top:'-48px', zIndex:'2', width:'156px'}}
-							label="Backgrounds"
-							icon="otheruser"
-							onInvoked={this.handleObjectListMore} />
-
-
-						<ReactWinJS.ListView
-							id="SidebarMainObjectList"
-							itemDataSource={currentData}
-							itemTemplate={currentLayout}
-							loadingBehavior="incremental"
-							automaticallyLoadPages={true}
-							layout={_LISTLAYOUT_}
-							style={{opacity:this.state.paneOpened?"1":"0", maxHeight:ObjectListHeight }}
-						/>
-					</div>
-				</ReactWinJS.Pivot.Item>
-
-
-
-
-
-				<ReactWinJS.Pivot.Item key="itemC" header="Tiles">
-
-				</ReactWinJS.Pivot.Item>
-
-
-
-
-
-
-
-
-
-				<ReactWinJS.Pivot.Item key="itemD" header="Rooms">
-
-					<Home_Code_Draw  project={this.state.project}
-						updateProject={((evt)=>{this.props.updateProject(evt);}).bind(this)} />
-
-				</ReactWinJS.Pivot.Item>
-
-
-
-
-
-
-
-			</ReactWinJS.Pivot>
-
-
-
-*/

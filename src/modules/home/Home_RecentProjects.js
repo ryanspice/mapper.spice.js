@@ -37,6 +37,7 @@ export default class Home_RecentProjects extends React.Component {
 
 		   <Projects_ListView
 		   			project={this.state.project}
+					updateState={((evt)=>{this.props.updateState(evt);}).bind(this)}
 				   updateProject={((evt)=>{this.props.updateProject(evt);}).bind(this)} />
 
 		</div>);
