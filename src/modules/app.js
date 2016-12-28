@@ -23,6 +23,9 @@ declare var WinJS: Object;
 
 declare var hljs: Object;
 
+declare var _PROJECT_: Object;
+declare var FileReader: any;
+
 const _TEMPLATE_ = `{
 	"title": "Project Name",
 	"author": {
@@ -53,6 +56,7 @@ export default class App extends React.Component {
 		project:Object;
 		search:Array<string>;
 		searchCommand:Function;
+		currentlyOpened:boolean;
 	}
 
 	constructor(props:Object){
@@ -65,6 +69,7 @@ export default class App extends React.Component {
 
 		window.App = this;
 		this.state = {
+			currentlyOpened:false,
 			iterator:this.props.iterator,
 			project:project,
 			search:[],
@@ -102,88 +107,57 @@ export default class App extends React.Component {
 
 	updateList(){
 
-					function readBlob(file) {
+		function readBlob(file) {
 
-				       var start =0;
-				       var stop = file.size - 1;
+	       var start =0;
+	       var stop = file.size - 1;
 
-				       var reader = new FileReader();
+	       var reader = new FileReader();
 
-							// If we use onloadend, we need to check the readyState.
-							reader.onloadend = function(evt) {
+				// If we use onloadend, we need to check the readyState.
+				reader.onloadend = function(evt) {
 
-								if (evt.target.readyState == FileReader.DONE) { // DONE == 2
+					if (evt.target.readyState == FileReader.DONE) { // DONE == 2
 
-									console.log("LOADED FILE" + evt.currentTarget.result)
+						console.log("LOADED FILE" + evt.currentTarget.result)
 
-									_PROJECT_.list.unshift	(JSON.parse(evt.currentTarget.result));
-									window.Projects_ListView.updateView();
-									document.querySelector('#HomePivot > div.win-pivot-header-area > div.win-pivot-header-items > div > button:nth-child(2)').click();
-
-								}
-
-							};
-
-							var blob = file.slice(start, stop + 1);
-
-							reader.readAsBinaryString(blob);
-
-				     }
-
-					function handleFileSelect(evt) {
-
-						//evt.stopPropagation();
-						evt.preventDefault();
-
-
-						if (evt.dataTransfer)
-						var files = evt.dataTransfer.files;
-						else
-						var files = evt.target.files;
-
-						readBlob(files[0]);
-										console.log("loading FILE")
-
-					}
-
-					function handleDragOver(evt) {
-
-						//evt.stopPropagation();
-						evt.preventDefault();
-						evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
-
-					}
-
-		setTimeout(function(){
-			return;
-			document.getElementById('ProjectsList0').appendChild(document.getElementById('ProjectListView'));
-
-
-			document.getElementById('AddProject').removeEventListener('dragover', handleDragOver, false);
-			document.getElementById('AddProject').removeEventListener('drop', handleFileSelect, false);
-
-			document.getElementById('AddProject').addEventListener('dragover', handleDragOver, false);
-			document.getElementById('AddProject').addEventListener('drop', handleFileSelect, false);
-
-				document.getElementById('files').removeEventListener('change', handleFileSelect, false);
-				document.getElementById('files').addEventListener('change', handleFileSelect, false);
-
-
-				var elm = document.getElementsByClassName('ProjectListItem');
-				for(var i = elm.length-1;i>=0;i--){
-
-					elm[i].removeEventListener('click',false,false);
-					elm[i].addEventListener('click',function(){
+						_PROJECT_.list.unshift	(JSON.parse(evt.currentTarget.result));
+						window.Projects_ListView.updateView();
 						document.querySelector('#HomePivot > div.win-pivot-header-area > div.win-pivot-header-items > div > button:nth-child(2)').click();
-					}, false);
 
-				}
+					}
+
+				};
+
+				var blob = file.slice(start, stop + 1);
+
+				reader.readAsBinaryString(blob);
+
+	     }
+
+		function handleFileSelect(evt) {
+
+			//evt.stopPropagation();
+			evt.preventDefault();
 
 
+			if (evt.dataTransfer)
+			var files = evt.dataTransfer.files;
+			else
+			var files = evt.target.files;
 
-		},350)
+			readBlob(files[0]);
+							console.log("loading FILE")
 
+		}
 
+		function handleDragOver(evt) {
+
+			//evt.stopPropagation();
+			evt.preventDefault();
+			evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+
+		}
 
 	}
 
@@ -272,6 +246,7 @@ export default class App extends React.Component {
 	    	history.pushState({"State": "settings","target":""+this.refs.sba.split,"uid":""+new Date().getTime()}, "1", "/index.htm");
 		else
 	    	history.pushState({"State": "settings","target":"1010","uid":""+new Date().getTime()}, "1", "/index.htm");
+
 
 	}
 
@@ -378,7 +353,10 @@ export default class App extends React.Component {
 
 				<TopBarA ref="topbar" />
 
-				<SideBarA ref="sba" project = {this.state.project} currentlyOpen = {this.state.currentlyOpened}
+				<SideBarA
+					ref="sba"
+					project = {this.state.project}
+					currentlyOpen = {this.state.currentlyOpened}
 					updateProject={((evt)=>{this.updateProject(evt);}).bind(this)}
 					updateState={((evt)=>{this.updateState(evt);}).bind(this)}
 					/>
