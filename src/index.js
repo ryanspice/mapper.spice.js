@@ -9,11 +9,20 @@ import ReactDOM from 'react-dom';
 
 import App from "./modules/app.js";
 
-import SpiceJS from "./sjs/spice.js";
+//import SpiceJS from "./sjs/spice.js";
+
+//import SpiceJS from "../../spice.js/src/spice.js";
+
+import SpiceJS from "ryanspice2016-spicejs";
+
+console.log('test');
 
 import LoadingScreen from "./loading.js";
 
 import project from "./modules/project.js";
+
+require('offline-plugin/runtime').install();
+
 
 /*
 	@ Mapper built as a customizable JSON map editor for 2D Games.
