@@ -9,7 +9,9 @@ import ReactDOM from 'react-dom';
 
 import App from "./modules/app.js";
 
-import SpiceJS from "./sjs/spice.js";
+//import SpiceJS from "./sjs/spice.js";
+
+import SpiceJS from "../../spice.js/src/spice.js";
 
 import LoadingScreen from "./loading.js";
 

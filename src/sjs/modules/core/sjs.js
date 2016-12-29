@@ -1,6 +1,6 @@
 /* @flow */
 
-console.time('SJS:B:sjs.js');
+console.time('SJS:C:sjs.js');
 
 import App from '../app.js';
 
@@ -90,4 +90,4 @@ export class _SJSClass extends _IFace {
 
 };
 
-console.timeEnd('SJS:B:sjs.js');
+console.timeEnd('SJS:C:sjs.js');

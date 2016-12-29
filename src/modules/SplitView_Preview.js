@@ -1,6 +1,8 @@
 /* @flow */
 
-import SpiceJS from "../sjs/spice.js";
+//import SpiceJS from "../sjs/spice.js";
+
+import SpiceJS from "../../../spice.js/src/spice.js";
 
 import React from 'react';
 
@@ -23,7 +25,7 @@ export default class SplitView_Preview extends React.Component {
 	}
 
 	componentDidMount(){
-		
+
 		window._App.main.draw = ()=>{
 
 			let exe = JSON.parse(this.state.project.code).draw;
