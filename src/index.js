@@ -11,7 +11,11 @@ import App from "./modules/app.js";
 
 //import SpiceJS from "./sjs/spice.js";
 
-import SpiceJS from "../../spice.js/src/spice.js";
+//import SpiceJS from "../../spice.js/src/spice.js";
+
+import SpiceJS from "ryanspice2016-spicejs";
+
+console.log('test');
 
 import LoadingScreen from "./loading.js";
 

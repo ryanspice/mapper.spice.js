@@ -78,7 +78,7 @@ module.exports = {
     vendor: ['react']
   },
   output: {
-	  
+
     path: path.resolve(__dirname,"bld"),
     filename: source.output.js,
 	publicPath:"/bld/",
@@ -97,7 +97,6 @@ module.exports = {
             },
             {
                 test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
                 use: [
                   'babel-loader'
                 ]
@@ -116,9 +115,9 @@ module.exports = {
   plugins:source.plugins,
   devServer: {
         contentBase: './bld',
-        hot: false,
-        inline: false,
-        compress: false,
+        hot: true,
+        inline: true,
+        compress: true,
         stats: {
             assets: true,
             children: false,
