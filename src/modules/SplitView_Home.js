@@ -28,7 +28,6 @@ import Home_Code_Draw from './home/Home_Code_Draw';
 			project:this.props.project,
 			pivot:{
 				home:"<a></a>"
-
 			}
 		});
 
@@ -46,12 +45,25 @@ import Home_Code_Draw from './home/Home_Code_Draw';
 					updateState={((evt)=>{this.props.updateState(evt);}).bind(this)}
 					updateProject={((evt)=>{this.props.updateProject(evt);}).bind(this)} />
 
-				<Home_Code style={{opacity:0}} project={this.state.project}
+
+				<div  id = "HomeDetail" >
+					<h2 className="win-h2">Welcome, Ryan Spice</h2>
+					<h3 className="win-h3" style={{float:'left', width:'100%',maxWidth:'120px'}}>Repos</h3>
+					<h3 className="win-h3" style={{float:'left', width:'100%',maxWidth:'120px'}}>Guest</h3>
+					<h3 className="win-h3" style={{float:'left', width:'100%',maxWidth:'120px'}}>Images</h3>
+					<h3 className="win-h3" style={{float:'left', width:'100%',maxWidth:'120px'}}>Hours</h3>
+					<h3 className="win-h3" style={{float:'left', width:'100%',maxWidth:'120px'}}></h3>
+				</div>
+
+				<div  id = "HomeDetail" >
+				</div>
+
+				<Home_Code  hidden style={{opacity:'0'}} project={this.state.project}
 					updateProject={((evt)=>{this.props.updateProject(evt);}).bind(this)} />
 
 			</div>
 
-			);
+		);
 
   	}
 

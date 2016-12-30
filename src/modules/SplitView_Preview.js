@@ -2,7 +2,9 @@
 
 //import SpiceJS from "../sjs/spice.js";
 
-import SpiceJS from "../../../spice.js/src/spice.js";
+//import SpiceJS from "../../../spice.js/src/spice.js";
+
+import SpiceJS from "ryanspice2016-spicejs";
 
 import React from 'react';
 
