@@ -86,18 +86,18 @@ module.exports = {
 	libraryTarget: "umd"
   },
   module: {
-      rules:[
+      loaders:[
             {
                 test: /\.html$/,
                 exclude: /node_modules/,
-                use: 'file-loader',
+                loader: 'file',
                 query: {
                   name: '[name].[ext]'
                 }
             },
             {
                 test: /\.(js|jsx)$/,
-                use: [
+                loaders: [
                   'babel-loader'
                 ]
             },
